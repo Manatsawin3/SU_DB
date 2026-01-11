@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUNGBANKONTOUR</title>
+    <link rel="stylesheet" href="CSS/navbar.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body>
+    <%- include('navbar') %>
+
+    <div class="container">
+      <form class="form" action="/schedule" method="post">
+        <% if (message) { %>
+        <p style="color: rgb(0, 0, 0)"><%= message %></p>
+        <% } %>
+        <h1>Schedule</h1>
+        <span class="input-span">
+          <label for="Origin" class="label">Origin</label>
+          <input type="text" name="Origin" id="Origin" />
+        </span>
+        <span class="input-span">
+          <label for="Destination" class="label">Destination</label>
+          <input type="text" name="Destination" id="Destination" />
+        </span>
+        <span class="input-span">
+          <label for="DepartureTime" class="label">DepartureTime</label>
+          <input type="text" name="DepartureTime" id="DepartureTime" />
+        </span>
+        <span class="input-span">
+          <label for="BusID" class="label">BusID</label>
+          <input type="text" name="BusID" id="BusID" />
+        </span>
+        <input class="submit" type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

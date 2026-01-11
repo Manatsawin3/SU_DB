@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUNGBANKONTOUR</title>
+  <link rel="stylesheet" href="CSS/navbar.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+  <%- include('navbar') %>
+
+    <div class="container">
+      <form class="form" action="/ticket" method="post">
+        <% if (message) { %>
+          <p style="color: rgb(0, 0, 0)">
+            <%= message %>
+          </p>
+          <% } %>
+            <h1>Ticket</h1>
+            <span class="input-span">
+              <label for="ScheduleID" class="label">ScheduleID</label>
+              <input type="text" name="ScheduleID" id="ScheduleID" />
+            </span>
+            <span class="input-span">
+              <label for="BusID" class="label">BusID</label>
+              <input type="text" name="BusID" id="BusID" />
+            </span>
+            <span class="input-span">
+              <label for="SeatNumber" class="label">SeatNumber</label>
+              <input type="text" name="SeatNumber" id="SeatNumber" />
+            </span>
+            <span class="input-span">
+              <label for="BookingDate" class="label">BookingDate</label>
+              <input type="text" name="BookingDate" id="BookingDate" />
+            </span>
+            <span class="input-span">
+              <label for="StaffID" class="label">StaffID</label>
+              <input type="text" name="StaffID" id="StaffID" />
+            </span>
+            <span class="input-span">
+              <label for="MemberID" class="label">MemberID</label>
+              <input type="text" name="MemberID" id="MemberID" placeholder="Optional"/>
+            </span>
+            <input class="submit" type="submit" value="Submit" />
+      </form>
+    </div>
+</body>
+
+</html>

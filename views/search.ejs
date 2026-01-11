@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUNGBANKONTOUR</title>
+    <link rel="stylesheet" href="CSS/navbar.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <!-- <link rel="stylesheet" href="./output.css"> -->
+  </head>
+
+  <body>
+    <%- include('navbar') %>
+
+    <div class="container">
+      <form class="form" action="/search" method="post">
+        <% if (message) { %>
+        <p style="color: rgb(0, 0, 0)"><%= message %></p>
+        <% } %>
+        <h1>Search</h1>
+        <span class="input-span">
+          <label for="TicketID" class="label">TicketID</label>
+          <input type="text" name="TicketID" id="TicketID" />
+        </span>
+        <span class="input-span">
+          <label for="Name" class="label">Name</label>
+          <input type="text" name="Name" id="Name" />
+        </span>
+        <input class="submit" type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

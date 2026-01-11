@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUNGBANKONTOUR</title>
+  <link rel="stylesheet" href="CSS/navbar.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+  <%- include('navbar') %>
+
+    <div class="container">
+      <form class="form" action="/history" method="post">
+        <% if (message) { %>
+          <p style="color: rgb(0, 0, 0)">
+            <%= message %>
+          </p>
+          <% } %>
+            <h1>History</h1>
+            <span class="input-span">
+              <label for="BusID" class="label">BusID</label>
+              <input type="text" name="BusID" id="BusID" />
+            </span>
+            <input class="submit" type="submit" value="Submit" />
+      </form>
+
+      <br>
+
+      <!-- แสดงผลตารางข้อมูลรถบัส -->
+      <% if (Bus && Bus.length> 0) { %>
+        <table border="1">
+          <tr>
+            <th>ScheduleID</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Bus ID</th>
+            <th>Plate Number</th>
+          </tr>
+          <% Bus.forEach(Bus=> { %>
+            <tr>
+              <td>
+                <%= Bus.ScheduleID %>
+              </td>
+              <td>
+                <%= Bus.Origin %>
+              </td>
+              <td>
+                <%= Bus.Destination %>
+              </td>
+              <td>
+                <%= Bus.DepartureTime %>
+              </td>
+              <td>
+                <%= Bus.BusID %>
+              </td>
+              <td>
+                <%= Bus.PlateNumber %>
+              </td>
+            </tr>
+            <% }); %>
+        </table>
+        <% } else{ %>
+          <% } %>
+
+    </div>
+</body>
+
+</html>

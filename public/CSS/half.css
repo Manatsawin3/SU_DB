@@ -1,0 +1,23 @@
+.container-half {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  width: 100%;
+  overflow: auto;
+}
+
+.container-member,
+.container-ticket {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  overflow: auto;
+}
